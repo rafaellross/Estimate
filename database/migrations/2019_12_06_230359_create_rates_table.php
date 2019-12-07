@@ -17,9 +17,9 @@ class CreateRatesTable extends Migration
             $table->bigIncrements('id');
             $table->string('code', 10);
             $table->string('description', 255);
-            $table->string('unit', 20);
-            $table->float('cost_exgst');
-            $table->float('cost_incgst');
+            $table->string('unit', 20)->default('ea');
+            $table->float('cost_exgst', 15, 5);
+            $table->float('cost_incgst', 15, 5);
 
             $table->timestamps();
         });

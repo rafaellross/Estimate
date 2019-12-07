@@ -14,8 +14,16 @@ class CreateRateItemsTable extends Migration
     public function up()
     {
         Schema::create('rate_items', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+          $table->bigIncrements('id');
+          $table->unsignedBigInteger('rate_id');
+          $table->unsignedBigInteger('product_id')->nullable();
+          $table->string('code', 10);
+          $table->string('description', 255);
+          $table->string('unit', 20)->default('ea');
+          $table->float('cost_exgst', 15, 5);
+          $table->float('cost_incgst', 15, 5);
+          $table->string('cost_type', 20);
+          $table->timestamps();
         });
     }
 

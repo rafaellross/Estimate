@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Rate;
+use App\Product;
 use Faker\Generator as Faker;
 
-$factory->define(Rate::class, function (Faker $faker) {
+$factory->define(Product::class, function (Faker $faker) {
     return [
       'code' => $faker->randomNumber($nbDigits = 5, $strict = true),
       'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),

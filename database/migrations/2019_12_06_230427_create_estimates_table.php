@@ -16,7 +16,7 @@ class CreateEstimatesTable extends Migration
         Schema::create('estimates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('project_name', 255);
-            $table->integer('customer')->nullable();
+            $table->integer('customer_id')->nullable();
             $table->string('status', 5)->nullable();
             $table->date('due_dt')->nullable();
             $table->date('price_dt')->nullable();
@@ -27,8 +27,8 @@ class CreateEstimatesTable extends Migration
             $table->string('project_suburb', 255);
             $table->smallInteger('project_state')->nullable();
             $table->string('project_contact', 100);
-            $table->string('project_contact_phone', 20);
-            $table->string('project_contact_mobile', 20);
+            $table->string('project_contact_phone', 50);
+            $table->string('project_contact_mobile', 50);
             $table->string('project_contact_email', 50);
 
             $table->timestamps();
