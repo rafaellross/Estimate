@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\EstimateDetail;
+use App\EstimateRate;
 use Illuminate\Http\Request;
 
-class EstimateDetailController extends Controller
+class EstimateRateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class EstimateDetailController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\EstimateDetail  $estimateDetail
+     * @param  \App\EstimateRate  $estimateRate
      * @return \Illuminate\Http\Response
      */
-    public function show(EstimateDetail $estimateDetail)
+    public function show(EstimateRate $estimateRate)
     {
         //
     }
@@ -52,10 +52,10 @@ class EstimateDetailController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\EstimateDetail  $estimateDetail
+     * @param  \App\EstimateRate  $estimateRate
      * @return \Illuminate\Http\Response
      */
-    public function edit(EstimateDetail $estimateDetail)
+    public function edit(EstimateRate $estimateRate)
     {
         //
     }
@@ -64,10 +64,10 @@ class EstimateDetailController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\EstimateDetail  $estimateDetail
+     * @param  \App\EstimateRate  $estimateRate
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EstimateDetail $estimateDetail)
+    public function update(Request $request, EstimateRate $estimateRate)
     {
         //
     }
@@ -75,10 +75,10 @@ class EstimateDetailController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\EstimateDetail  $estimateDetail
+     * @param  \App\EstimateRate  $estimateRate
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EstimateDetail $estimateDetail)
+    public function destroy(EstimateRate $estimateRate)
     {
         //
     }

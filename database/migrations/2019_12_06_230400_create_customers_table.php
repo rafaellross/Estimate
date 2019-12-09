@@ -22,7 +22,7 @@ class CreateCustomersTable extends Migration
             $table->string('street', 255)->nullable();
             $table->string('street2', 255)->nullable();
             $table->string('suburb', 255)->nullable();
-            $table->smallInteger('state_id')->nullable();
+            $table->unsignedBigInteger('state')->nullable();
             $table->string('contact', 100)->nullable();
             $table->string('contact_phone', 50)->nullable();
             $table->string('contact_mobile', 50)->nullable();
@@ -30,6 +30,9 @@ class CreateCustomersTable extends Migration
 
 
             $table->timestamps();
+
+            
+            $table->foreign('state')->references('id')->on('states');
         });
     }
 

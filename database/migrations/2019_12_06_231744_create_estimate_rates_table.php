@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRateItemsTable extends Migration
+class CreateEstimateRatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,22 @@ class CreateRateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rate_items', function (Blueprint $table) {
+        Schema::create('estimate_rates', function (Blueprint $table) {
           $table->bigIncrements('id');
-          $table->unsignedBigInteger('rate_id');
-          $table->unsignedBigInteger('product_id')->nullable();
-          $table->string('code', 10);
+          $table->unsignedBigInteger('rate_id')->nullable();
+          $table->unsignedBigInteger('estimate_id')->nullable();
           $table->string('description', 255);
           $table->string('unit', 20)->default('ea');
           $table->float('cost_exgst', 15, 5);
           $table->float('cost_incgst', 15, 5);
-          $table->string('cost_type', 20);
+          $table->string('cost_type', 20)->nullable(); //If it isn't a rate, user will define type
+
           $table->timestamps();
 
           $table->foreign('rate_id')->references('id')->on('rates');
-          $table->foreign('product_id')->references('id')->on('products');
+          $table->foreign('estimate_id')->references('id')->on('estimates');
+
         });
-
-
     }
 
     /**
@@ -39,6 +38,6 @@ class CreateRateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rate_items');
+        Schema::dropIfExists('estimate_rates');
     }
 }

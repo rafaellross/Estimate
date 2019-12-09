@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\EstimateDetail;
+use App\EstimateRate;
 use Faker\Generator as Faker;
 
-$factory->define(EstimateDetail::class, function (Faker $faker) {
+$factory->define(EstimateRate::class, function (Faker $faker) {
     return [
         //
     ];
